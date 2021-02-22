@@ -7,20 +7,24 @@
 
 import Foundation
 
+/// Holds base API client logic.
 internal class APIClient {
 
 	typealias RequestCompletion = ((_ response: APIRequestResult) -> Void)?
 
 	// MARK: - Constants
 
+	/// Constants.
 	enum Constants {
 		static let validStatuses: Range<Int> = 200..<300
 	}
 
 	// MARK: - Vars
 
+	/// Custom headers.
 	var customHeader: VGSHTTPHeaders?
 
+	/// Default request headers with vgs client info.
 	internal static let defaultHttpHeaders: VGSHTTPHeaders = {
 			// Add Headers
 		let version = ProcessInfo.processInfo.operatingSystemVersion
@@ -37,9 +41,13 @@ internal class APIClient {
 	/// URLSession object.
 	internal let urlSession = URLSession(configuration: .ephemeral)
 
+	/// Vault ID.
 	private let vaultId: String
+
+	/// Vault URL.
 	private let vaultUrl: URL?
 
+	/// Base URL depends on current api policy.
 	internal var baseURL: URL? {
 		return self.hostURLPolicy.url
 	}
@@ -50,6 +58,7 @@ internal class APIClient {
 	/// Serial queue for syncing requests on resolving hostname flow.
 	private let dataSyncQueue: DispatchQueue = .init(label: "iOS.VGSShowSDK.ResolveHostNameRequestsQueue")
 
+	/// Sync semaphore.
 	private let syncSemaphore: DispatchSemaphore = .init(value: 1)
 
 	// MARK: - Initialization
