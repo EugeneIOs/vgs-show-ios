@@ -66,7 +66,7 @@ public final class VGSShow {
 	///   - hostname: `String` object. Custom Hostname, if not set, data will be sent to Vault Url. Default is `nil`.
 	///   - satellitePort: `Int?` object, custom port for satellite configuration.  Default is `nil`. **IMPORTANT! Use only with .sandbox environment! Hostname should be specified for valid http://localhost or in local IP format  http://192.168.X.X**.
 	public init(id: String, environment: String, hostname: String? = nil, satellitePort: Int? = nil) {
-		self.apiClient = APIClient(tenantId: id, regionalEnvironment: environment, hostname: hostname)
+		self.apiClient = APIClient(tenantId: id, regionalEnvironment: environment, hostname: hostname, satellitePort: satellitePort)
     self.tenantId = id
     self.regionalEnvironment = environment
   }

@@ -54,13 +54,40 @@ internal class APIClient {
 
 	// MARK: - Initialization
 
-	required init(tenantId: String, regionalEnvironment: String, hostname: String?) {
+	/// Initialization.
+	/// - Parameters:
+	///   - tenantId: `String` object, should be valid tenant id.
+	///   - regionalEnvironment: `String` object, should be valid environment.
+	///   - hostname: `String?` object, should be valid hostname or `nil`.
+	///   - formAnalyticsDetails: `VGSFormAnanlyticsDetails` object, analytics data.
+	///   - satellitePort: `Int?` object, custom port for satellite configuration. **IMPORTANT! Use only with .sandbox environment!**.
+	required init(tenantId: String, regionalEnvironment: String, hostname: String?, satellitePort: Int?) {
 		self.vaultUrl = VGSShow.generateVaultURL(tenantId: tenantId, regionalEnvironment: regionalEnvironment)
 		self.vaultId = tenantId
 
 		guard let validVaultURL = vaultUrl else {
 			// Cannot resolve hostname with invalid Vault URL.
 			self.hostURLPolicy = .invalidVaultURL
+			return
+		}
+
+		// Check satellite port is *nil* for regular API flow.
+		guard satellitePort == nil else {
+			// Try to build satellite URL.
+			guard let port = satellitePort, let satelliteURL = VGSShowSatelliteUtils.buildSatelliteURL(with: regionalEnvironment, hostname: hostname, satellitePort: port) else {
+
+				// Use vault URL as fallback if cannot resolve satellite flow.
+				self.hostURLPolicy = .vaultURL(validVaultURL)
+				return
+			}
+
+			// Use satellite URL and return.
+			self.hostURLPolicy = .satelliteURL(satelliteURL)
+
+			let message = "Satellite has been configured successfully! Satellite URL is: \(satelliteURL.absoluteString)"
+			let event = VGSLogEvent(level: .info, text: message)
+			VGSLogger.shared.forwardLogEvent(event)
+
 			return
 		}
 
@@ -105,6 +132,8 @@ internal class APIClient {
 		switch hostURLPolicy {
 		case .invalidVaultURL:
 			url = nil
+		case .satelliteURL(let satelliteURL):
+			url = satelliteURL
 		case .vaultURL(let vaultURL):
 			url = vaultURL
 		case .customHostURL(let status):
