@@ -112,7 +112,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
 				vgsLabel.addTransformationRegex(regex, template: template)
 
 			} catch {
-				assertionFailure("invalid regex")
+				XCTFail("invalid regex")
 			}
 
 			XCTAssert(vgsLabel.label.secureText == transformedText)
@@ -127,7 +127,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
 			print("valid masked text: \(testItem.maskedText)")
 
 			if vgsLabel.label.secureText != testItem.maskedText {
-				assertionFailure("Failed!")
+				XCTFail("Failed!")
 			}
 		}
 	}
@@ -162,7 +162,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
 			print("valid masked text: \(testItem.maskedText)")
 
 			if vgsLabel.label.secureText != testItem.maskedText {
-				assertionFailure("Failed!")
+				XCTFail("Failed! \(vgsLabel.label.secureText) != \(testItem.maskedText)")
 			}
 		}
 	}
@@ -181,7 +181,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
       let regex = try NSRegularExpression(pattern: cardNumberPattern, options: [])
       vgsLabel.addTransformationRegex(regex, template: template)
     } catch {
-      assertionFailure("invalid regex")
+      XCTFail("invalid regex")
     }
 
     XCTAssert(vgsLabel.label.secureText == transformedText)
@@ -234,7 +234,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
       let regex = try NSRegularExpression(pattern: cardNumberPattern, options: [])
       vgsLabel.addTransformationRegex(regex, template: template)
     } catch {
-      assertionFailure("invalid regex")
+      XCTFail("invalid regex")
     }
 
     XCTAssert(vgsLabel.label.secureText == transformedText)

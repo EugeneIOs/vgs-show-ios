@@ -15,14 +15,14 @@ internal class APIClient {
 	// MARK: - Constants
 
 	/// Constants.
-	enum Constants {
+	internal enum Constants {
 		static let validStatuses: Range<Int> = 200..<300
 	}
 
 	// MARK: - Vars
 
 	/// Custom headers.
-	var customHeader: VGSHTTPHeaders?
+	internal var customHeader: VGSHTTPHeaders?
 
 	/// Default request headers with vgs client info.
 	internal static let defaultHttpHeaders: VGSHTTPHeaders = {
@@ -70,7 +70,7 @@ internal class APIClient {
 	///   - hostname: `String?` object, should be valid hostname or `nil`.
 	///   - formAnalyticsDetails: `VGSFormAnanlyticsDetails` object, analytics data.
 	///   - satellitePort: `Int?` object, custom port for satellite configuration. **IMPORTANT! Use only with .sandbox environment!**.
-	required init(tenantId: String, regionalEnvironment: String, hostname: String?, satellitePort: Int?) {
+	required internal init(tenantId: String, regionalEnvironment: String, hostname: String?, satellitePort: Int?) {
 		self.vaultUrl = VGSShow.generateVaultURL(tenantId: tenantId, regionalEnvironment: regionalEnvironment)
 		self.vaultId = tenantId
 
@@ -120,7 +120,7 @@ internal class APIClient {
 
 	// MARK: - Public
 
-	func sendRequestWithJSON(path: String, method: VGSHTTPMethod = .post, value: VGSJSONData?, completion block: RequestCompletion) {
+	internal func sendRequestWithJSON(path: String, method: VGSHTTPMethod = .post, value: VGSJSONData?, completion block: RequestCompletion) {
 
 		let payload = VGSRequestPayloadBody.json(value)
 		resolveURLForRequest(path: path, method: method, payload: payload, block: block)
