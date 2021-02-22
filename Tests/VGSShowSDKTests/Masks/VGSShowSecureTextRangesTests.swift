@@ -266,7 +266,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
         let textRanges = testItem.ranges
         vgsLabel.setSecureText(ranges: textRanges)
         
-        XCTAssertTrue(vgsLabel.label.secureText == testItem.espectedResult, "Failed:\n  -espectedResult: \(testItem.espectedResult)\n  -result: \(vgsLabel.label.secureText)")
+        XCTAssertTrue(vgsLabel.label.secureText == testItem.espectedResult, "Failed:\n  -espectedResult: \(testItem.espectedResult)\n  -result: \(vgsLabel.label.secureText ?? "*nil*")")
       }
   }
   
@@ -300,7 +300,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
         let textRanges = testItem.ranges
         vgsLabel.setSecureText(ranges: textRanges)
 
-        XCTAssertTrue(vgsLabel.label.secureText == testItem.espectedResult, "Failed:\n  -espectedResult: \(testItem.espectedResult)\n  -result: \(vgsLabel.label.secureText)")
+        XCTAssertTrue(vgsLabel.label.secureText == testItem.espectedResult, "Failed:\n  -espectedResult: \(testItem.espectedResult)\n  -result: \(vgsLabel.label.secureText ?? "*nil*")")
       }
     }
       
