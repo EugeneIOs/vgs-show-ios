@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -20,6 +20,7 @@
 		4444EEF3255E645D002C9215 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4444EEF2255E645D002C9215 /* Assets.xcassets */; };
 		4444EEF7255E6467002C9215 /* ShowDemoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444EEF5255E6467002C9215 /* ShowDemoViewController.swift */; };
 		4444EEF8255E6467002C9215 /* CollectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4444EEF6255E6467002C9215 /* CollectViewController.swift */; };
+		445FD86225E3F7CB00B36614 /* VGSShowSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 445FD86125E3F7CB00B36614 /* VGSShowSDK */; };
 		446CB7EE25626D5700E770F1 /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 446CB7ED25626D5700E770F1 /* UIViewController+Extensions.swift */; };
 		44A15B74259B4D7000CB6654 /* VGSUITestElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A15B73259B4D7000CB6654 /* VGSUITestElement.swift */; };
 		44A15B7C259B4DDD00CB6654 /* VGSUITestElementType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 44A15B7B259B4DDD00CB6654 /* VGSUITestElementType.swift */; };
@@ -100,6 +101,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				9E388E3BB9BA126239E8F61B /* Pods_VGSShowDemoApp.framework in Frameworks */,
+				445FD86225E3F7CB00B36614 /* VGSShowSDK in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -296,6 +298,9 @@
 			dependencies = (
 			);
 			name = VGSShowDemoApp;
+			packageProductDependencies = (
+				445FD86125E3F7CB00B36614 /* VGSShowSDK */,
+			);
 			productName = VGSShowDemoApp;
 			productReference = 44415F98255D36F90012D107 /* VGSShowDemoApp.app */;
 			productType = "com.apple.product-type.application";
@@ -368,6 +373,9 @@
 				Base,
 			);
 			mainGroup = 44415F8F255D36F90012D107;
+			packageReferences = (
+				445FD86025E3F7CB00B36614 /* XCRemoteSwiftPackageReference "vgs-show-ios" */,
+			);
 			productRefGroup = 44415F99255D36F90012D107 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -805,6 +813,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		445FD86025E3F7CB00B36614 /* XCRemoteSwiftPackageReference "vgs-show-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/EugeneIOs/vgs-show-ios.git";
+			requirement = {
+				kind = revision;
+				revision = 0cf0e074fc783a5d923b525c202dd2d31415f55a;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		445FD86125E3F7CB00B36614 /* VGSShowSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 445FD86025E3F7CB00B36614 /* XCRemoteSwiftPackageReference "vgs-show-ios" */;
+			productName = VGSShowSDK;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 44415F90255D36F90012D107 /* Project object */;
 }
