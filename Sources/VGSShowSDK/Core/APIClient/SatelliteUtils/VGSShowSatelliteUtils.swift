@@ -61,7 +61,9 @@ internal class VGSShowSatelliteUtils {
 			return nil
 		}
 
-		print("normalized name debug: \(normalizedHostname)")
+		let infoText = "normalized hostname for satellite: \(normalizedHostname)"
+		let normalizeHostnameEvent = VGSLogEvent(level: .info, text: infoText)
+		VGSLogger.shared.forwardLogEvent(normalizeHostnameEvent)
 
 		guard let url = URL(string: "http://" + normalizedHostname + ":\(satellitePort)") else {
 			// Cannot build hostname URL for satellite.

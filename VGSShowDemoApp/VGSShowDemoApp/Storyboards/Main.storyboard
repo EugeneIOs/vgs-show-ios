@@ -204,11 +204,6 @@
                                 <state key="normal" title="Copy Card Number">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                                        <integer key="value" value="6"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="copyCardAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4l4-Wd-pbu"/>
                                 </connections>
