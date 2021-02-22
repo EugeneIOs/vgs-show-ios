@@ -162,7 +162,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
 			print("valid masked text: \(testItem.maskedText)")
 
 			if vgsLabel.label.secureText != testItem.maskedText {
-				XCTFail("Failed! \(vgsLabel.label.secureText) != \(testItem.maskedText)")
+				XCTFail("Failed! \(vgsLabel.label.secureText ?? "*nil*") != \(testItem.maskedText)")
 			}
 		}
 	}
@@ -216,7 +216,7 @@ final class VGSShowSecureTextRangesTests: XCTestCase {
         let textRanges = testItem.ranges
         vgsLabel.setSecureText(ranges: textRanges)
 
-        XCTAssertTrue(vgsLabel.label.secureText == testItem.espectedResult, "Failed:\n  -espectedResult: \(testItem.espectedResult)\n  -result: \(vgsLabel.label.secureText)")
+        XCTAssertTrue(vgsLabel.label.secureText == testItem.espectedResult, "Failed:\n  -espectedResult: \(testItem.espectedResult)\n  -result: \(vgsLabel.label.secureText  ?? "*nil*")")
       }
   }
   
