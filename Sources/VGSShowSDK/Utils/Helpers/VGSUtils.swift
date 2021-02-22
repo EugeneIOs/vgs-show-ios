@@ -35,7 +35,7 @@ internal class Utils {
 		var bundle: Bundle?
 
 		#if SWIFT_PACKAGE
-		 // bundle = Bundle.module
+		  bundle = Bundle.module
 		#endif
 
 		// Return if bundle is found.
