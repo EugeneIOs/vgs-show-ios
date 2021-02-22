@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 
+// swiftlint:disable line_length
 extension UIViewController {
 	static func show(message: String, controller: UIViewController) {
 		let toastView = UIView(frame: .zero)

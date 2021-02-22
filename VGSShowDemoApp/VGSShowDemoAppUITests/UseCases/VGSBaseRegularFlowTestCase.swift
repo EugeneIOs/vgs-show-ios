@@ -41,6 +41,7 @@ class VGSBaseRegularFlowTestCase: VGSShowDemoAppBaseTestCase {
 	/// Labels.
 	enum Labels {
 
+		// swiftlint:disable nesting
 		/// VGSLabel views.
 		enum VGSLabels {
 			/// Card holder VGSLabel.
