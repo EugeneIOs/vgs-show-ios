@@ -92,10 +92,8 @@ class VGSShowAPIClientSatelliteTests: VGSShowBaseTestCase {
 				portText = "\(port)"
 			}
 
-
 			let outputText = "index: \(index) satellite configuration with environment: \(config.environment) hostname: \(config.hostname ?? "*nil*") port: \(portText) should produce *nil*"
 			let client = APIClient(tenantId: tenantID, regionalEnvironment: config.environment, hostname: config.hostname, satellitePort: config.port)
-
 
 			switch client.hostURLPolicy {
 			case .vaultURL(let url):
