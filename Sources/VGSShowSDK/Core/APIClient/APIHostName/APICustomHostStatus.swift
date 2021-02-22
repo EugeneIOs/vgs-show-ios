@@ -43,3 +43,20 @@ internal enum APICustomHostStatus {
 		}
 	}
 }
+
+// MARK: - CustomStringConvertible
+
+extension APICustomHostStatus: CustomStringConvertible {
+
+	  /// Custom description.
+		var description: String {
+			switch self {
+			case .useDefaultVault(let url):
+				return ".useDefaultVault, default Vault url: \(url.absoluteString)"
+			case .resolved(let url):
+			  return ".resolved, custom host url: \(url.absoluteString)"
+			case .isResolving(let hostnameToResolve):
+				return ".isResolving hostname in progress for \(hostnameToResolve)"
+			}
+		}
+}
