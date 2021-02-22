@@ -5,6 +5,7 @@
 
 import Foundation
 
+/// Defines API client policy for resolving URL.
 internal enum APIHostURLPolicy {
 
 	/**
