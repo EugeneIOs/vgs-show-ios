@@ -196,6 +196,14 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		445FD85625E3F70E00B36614 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Resources;
+			path = Sources/VGSShowSDK/Resources;
+			sourceTree = SOURCE_ROOT;
+		};
 		4461083025639CBB006479FB /* Analytics */ = {
 			isa = PBXGroup;
 			children = (
@@ -299,6 +307,7 @@
 				44A79F55255D0678009AF720 /* Utils */,
 				44A79F5F255D0678009AF720 /* Erros */,
 				44A79F62255D0678009AF720 /* UIElements */,
+				445FD85625E3F70E00B36614 /* Resources */,
 			);
 			path = VGSShowSDK;
 			sourceTree = "<group>";
