@@ -22,11 +22,29 @@ internal class Utils {
 
   /// VGS Show SDK Version
   static let vgsShowVersion: String = {
-      guard let vgsInfo = Bundle(for: Utils.self).infoDictionary,
+      guard let vgsInfo = provideBundleForVGSShowSDK()?.infoDictionary,
           let build = vgsInfo["CFBundleShortVersionString"]
           else {
               return "Unknown"
       }
       return "\(build)"
   }()
+
+	/// Provide current `Bundle` for VGSShow.
+	static func provideBundleForVGSShowSDK() -> Bundle? {
+		var bundle: Bundle?
+
+		#if SWIFT_PACKAGE
+		  bundle = Bundle.module
+		#endif
+
+		// Return if bundle is found.
+		guard bundle == nil else {
+			return bundle
+		}
+
+		bundle = Bundle(for: Utils.self)
+
+		return bundle
+	}
 }
