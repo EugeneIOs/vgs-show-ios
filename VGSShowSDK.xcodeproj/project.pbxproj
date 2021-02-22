@@ -13,10 +13,9 @@
 		441963C12590C36100CAFBB3 /* VGSPlaceholderLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441963C02590C36100CAFBB3 /* VGSPlaceholderLabel.swift */; };
 		441963E12592357400CAFBB3 /* VGSPlaceholderLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 441963E02592357400CAFBB3 /* VGSPlaceholderLabelStyle.swift */; };
 		442F806125A5A80000CC04A2 /* VGSTextRangeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 442F806025A5A80000CC04A2 /* VGSTextRangeTests.swift */; };
+		445F7E6E25E4017B0018F322 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 445F7E6D25E4017B0018F322 /* Media.xcassets */; };
 		4461083225639CDF006479FB /* VGSAnalyticsClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461083125639CDF006479FB /* VGSAnalyticsClient.swift */; };
 		4461083525639DEE006479FB /* VGSUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4461083425639DEE006479FB /* VGSUtils.swift */; };
-		446848F925E3F9E20093A760 /* Discover-Light@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 446848F825E3F9E20093A760 /* Discover-Light@3x.png */; };
-		4468490125E3FB330093A760 /* dummy.json in Resources */ = {isa = PBXBuildFile; fileRef = 4468490025E3FB330093A760 /* dummy.json */; };
 		4479E7822567A9720056350F /* VGSShow+Analytics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4479E7812567A9720056350F /* VGSShow+Analytics.swift */; };
 		447FFDE4256E62B500CDAE4E /* VGSShowResponseDecodingFormat.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447FFDDF256E62B500CDAE4E /* VGSShowResponseDecodingFormat.swift */; };
 		447FFDE5256E62B500CDAE4E /* VGSShowDecodedContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 447FFDE0256E62B500CDAE4E /* VGSShowDecodedContent.swift */; };
@@ -96,10 +95,9 @@
 		441963C02590C36100CAFBB3 /* VGSPlaceholderLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSPlaceholderLabel.swift; sourceTree = "<group>"; };
 		441963E02592357400CAFBB3 /* VGSPlaceholderLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSPlaceholderLabelStyle.swift; sourceTree = "<group>"; };
 		442F806025A5A80000CC04A2 /* VGSTextRangeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSTextRangeTests.swift; sourceTree = "<group>"; };
+		445F7E6D25E4017B0018F322 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
 		4461083125639CDF006479FB /* VGSAnalyticsClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSAnalyticsClient.swift; sourceTree = "<group>"; };
 		4461083425639DEE006479FB /* VGSUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VGSUtils.swift; sourceTree = "<group>"; };
-		446848F825E3F9E20093A760 /* Discover-Light@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Discover-Light@3x.png"; sourceTree = "<group>"; };
-		4468490025E3FB330093A760 /* dummy.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = dummy.json; sourceTree = "<group>"; };
 		4479E7812567A9720056350F /* VGSShow+Analytics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "VGSShow+Analytics.swift"; sourceTree = "<group>"; };
 		447FFDDF256E62B500CDAE4E /* VGSShowResponseDecodingFormat.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGSShowResponseDecodingFormat.swift; sourceTree = "<group>"; };
 		447FFDE0256E62B500CDAE4E /* VGSShowDecodedContent.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VGSShowDecodedContent.swift; sourceTree = "<group>"; };
@@ -203,8 +201,7 @@
 		445FD85625E3F70E00B36614 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				446848F825E3F9E20093A760 /* Discover-Light@3x.png */,
-				4468490025E3FB330093A760 /* dummy.json */,
+				445F7E6D25E4017B0018F322 /* Media.xcassets */,
 			);
 			name = Resources;
 			path = Sources/VGSShowSDK/Resources;
@@ -643,8 +640,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4468490125E3FB330093A760 /* dummy.json in Resources */,
-				446848F925E3F9E20093A760 /* Discover-Light@3x.png in Resources */,
+				445F7E6E25E4017B0018F322 /* Media.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
