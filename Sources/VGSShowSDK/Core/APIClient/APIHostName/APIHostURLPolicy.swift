@@ -37,8 +37,8 @@ internal enum APIHostURLPolicy {
 	*/
 	case satelliteURL(_ satelliteURL: URL)
 
-	/// `URL?` for current API policy.
-	var url: URL? {
+	/// `URL?` inferred from current API policy flow.
+	internal var url: URL? {
 		switch self {
 		case .invalidVaultURL:
 			return nil

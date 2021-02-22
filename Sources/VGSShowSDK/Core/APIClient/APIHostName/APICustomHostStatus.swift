@@ -31,7 +31,8 @@ internal enum APICustomHostStatus {
 	*/
 	case useDefaultVault(_ vaultURL: URL)
 
-	var url: URL? {
+	/// `URL` inferred from custom hostname status flow.
+	internal var url: URL? {
 		switch self {
 		case .isResolving:
 			return nil
