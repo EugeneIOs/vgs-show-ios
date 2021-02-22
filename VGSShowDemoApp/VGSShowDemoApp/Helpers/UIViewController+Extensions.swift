@@ -8,8 +8,8 @@
 import Foundation
 import UIKit
 
-// swiftlint:disable line_length
 extension UIViewController {
+	// swiftlint:disable
 	static func show(message: String, controller: UIViewController) {
 		let toastView = UIView(frame: .zero)
 		toastView.backgroundColor = UIColor.black.withAlphaComponent(0.7)
