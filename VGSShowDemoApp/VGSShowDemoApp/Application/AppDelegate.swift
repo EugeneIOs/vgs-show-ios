@@ -14,9 +14,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 
-	// Setup loggers in AppDelegate -init as the earliest app stage.
+	/// App delegate initializer.
 	override init() {
 		super.init()
+
+		// *Setup loggers in AppDelegate -init as the earliest app stage.
 
 		// Enable loggers only for debug!
 		#if DEBUG
