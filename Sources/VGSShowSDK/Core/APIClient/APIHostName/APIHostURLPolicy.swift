@@ -51,3 +51,22 @@ internal enum APIHostURLPolicy {
 		}
 	}
 }
+
+// MARK: - CustomStringConvertible
+
+extension APIHostURLPolicy: CustomStringConvertible {
+
+		/// Custom description.
+		var description: String {
+			switch self {
+			case .invalidVaultURL:
+				return "*.invalidVaultURL* - API url is *nil*, SDK has incorrect configuration."
+			case .vaultURL(let vaultURL):
+				return "*.vaultURL* - use regular flow, url: \(vaultURL.absoluteString)"
+			case .customHostURL(let status):
+				return "*.customHostURL* with status: \(status.description)"
+			case .satelliteURL(let satelliteURL):
+				return "*.satelliteURL* - url: \(satelliteURL.absoluteString)"
+			}
+		}
+}

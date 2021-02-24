@@ -138,6 +138,10 @@ internal class APIClient {
 
 		let url: URL?
 
+		let infoEventText = "API will start request with current URL policy: \(hostURLPolicy.description)"
+		let infoEvent = VGSLogEvent(level: .info, text: infoEventText)
+		VGSLogger.shared.forwardLogEvent(infoEvent)
+
 		switch hostURLPolicy {
 		case .invalidVaultURL:
 			url = nil
